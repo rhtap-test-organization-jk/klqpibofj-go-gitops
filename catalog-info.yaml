@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: klqpibofj-go-gitops
+  description: This is GitOps manifest for klqpibofj-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=klqpibofj-go
+    backstage.io/kubernetes-id: klqpibofj-go 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: klqpibofj-go-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:klqpibofj-go
